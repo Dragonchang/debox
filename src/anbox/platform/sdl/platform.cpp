@@ -88,7 +88,8 @@ Platform::Platform(
           std::runtime_error("No valid display configuration found"));
   } else {
     display_frame = config_.display_frame;
-    window_size_immutable_ = true;
+    //disable widow resize
+    window_size_immutable_ = false;
   }
 
   graphics::emugl::DisplayInfo::get()->set_resolution(display_frame.width(), display_frame.height());

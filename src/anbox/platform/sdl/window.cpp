@@ -64,6 +64,8 @@ Window::Window(const std::shared_ptr<Renderer> &renderer,
   if (resizable)
     flags |= SDL_WINDOW_RESIZABLE;
 
+  //show window with fuscreen
+  flags |= SDL_WINDOW_FULLSCREEN_DESKTOP
   window_ = SDL_CreateWindow(title.c_str(),
                              frame.left(), frame.top(),
                              frame.width(), frame.height(),
