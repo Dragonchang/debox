@@ -72,9 +72,10 @@ Window::Window(const std::shared_ptr<Renderer> &renderer,
                              flags);
   if (!window_) {
     const auto message = utils::string_format("Failed to create window: %s", SDL_GetError());
-    BOOST_THROW_EXCEPTION(std::runtime_error(message));
+    BOOST_THROW_EXCEPTION(std::runtime_error(m essage));
   }
-
+  WARNING("Window left: '%d' top: '%d' width: '%d' height: '%d", frame.left(), frame.top(),
+	  frame.width(), frame.height());
   // If we create a window with border (server-side decoration), We
   // should not set hit test handler beacuse we don't need to simulate
   // the behavior of the title bar and resize area.
