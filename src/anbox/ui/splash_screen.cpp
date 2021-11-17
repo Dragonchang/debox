@@ -45,8 +45,6 @@ SplashScreen::SplashScreen() {
   }
 
   int fd;
-  struct fb_var_screeninfo fb_var;
-  int fd;
   struct fb_var_screeninfo screen_info;
   fd = open("/dev/fb0", O_RDWR);
   ioctl(fd, FBIOGET_VSCREENINFO, &screen_info);
