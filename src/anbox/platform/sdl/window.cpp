@@ -72,7 +72,7 @@ Window::Window(const std::shared_ptr<Renderer> &renderer,
                              flags);
   if (!window_) {
     const auto message = utils::string_format("Failed to create window: %s", SDL_GetError());
-    BOOST_THROW_EXCEPTION(std::runtime_error(m essage));
+    BOOST_THROW_EXCEPTION(std::runtime_error(message));
   }
   WARNING("Window left: '%d' top: '%d' width: '%d' height: '%d", frame.left(), frame.top(),
 	  frame.width(), frame.height());
