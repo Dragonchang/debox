@@ -49,8 +49,9 @@ Daemon::Daemon()
   Log().Init(anbox::Logger::Severity::kWarning);
 
   const auto log_level = utils::get_env_value("ANBOX_LOG_LEVEL", "");
-  if (!log_level.empty() && !Log().SetSeverityFromString(log_level))
-    WARNING("Failed to set logging severity to '%s'", log_level);
+  Log().SetSeverityFromString("trace");
+  //if (!log_level.empty() && !Log().SetSeverityFromString(log_level))
+    //WARNING("Failed to set logging severity to '%s'", log_level);
 }
 
 int Daemon::Run(const std::vector<std::string> &arguments) try {
