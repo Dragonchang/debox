@@ -20,6 +20,7 @@
 #include <fcntl.h>
 #include <linux/fb.h>
 #include <sys/mman.h>
+#include <sys/ioctl.h>
 
 #include "anbox/ui/splash_screen.h"
 #include "anbox/system_configuration.h"
