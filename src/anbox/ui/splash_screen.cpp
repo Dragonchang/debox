@@ -19,6 +19,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <linux/fb.h>
+#include <sys/mman.h>
 
 #include "anbox/ui/splash_screen.h"
 #include "anbox/system_configuration.h"
@@ -44,8 +45,8 @@ SplashScreen::SplashScreen() {
   struct fb_var_screeninfo fb_var;
   fd = open("/dev/fb0", O_RDWR);
   ioctl(fd, FBIOGET_VSCREENINFO, &fb_var);
-  const int width = fb_var.xres;
-  const int height = fb_var.yres;
+  int width = fb_var.xres;
+  int height = fb_var.yres;
   WARNING("window size '%d','%d'", width, height);
   if (width == 0 || height ==0) {
 	  width = 1024;
