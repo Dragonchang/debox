@@ -35,7 +35,7 @@ SplashScreen::SplashScreen() {
     BOOST_THROW_EXCEPTION(std::runtime_error(message));
   }
 
-  const auto width = 0, height = 0;
+  const auto width = 1920, height = 1080;
   window_ = SDL_CreateWindow("", 0, 0,
                              width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_BORDERLESS | SDL_WINDOW_FULLSCREEN_DESKTOP);
   if (!window_) {
